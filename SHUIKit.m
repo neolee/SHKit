@@ -28,7 +28,6 @@
             imageView = [[UIImageView alloc] initWithImage:image];
             [imageView setTag:kSCNavigationBarBackgroundImageTag];
             [navBar insertSubview:imageView atIndex:0];
-            [imageView release];
         }
     }
 }
