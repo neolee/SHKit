@@ -8,7 +8,7 @@
 
 #import "UIViewController+SHKit.h"
 
-@implementation UIViewController (SHKit)
+@implementation UIViewController (SHExtensions)
 
 - (CGRect) viewFrame {
     static CGFloat const kNavigationBarPortraitHeight = 44;

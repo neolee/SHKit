@@ -10,5 +10,6 @@
 
 @interface SHFoundation : NSObject
 
+// Objective-C utilities
 + (void)swizzleSelector:(SEL)orig ofClass:(Class)c withSelector:(SEL)alt;
 @end

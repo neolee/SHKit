@@ -6,10 +6,10 @@
 //  Copyright (c) 2011 Ragnarok Studio. All rights reserved.
 //
 
-#import "UINavigationBar+SHBackgroundImage.h"
+#import "UINavigationBar+BackgroundImage.h"
 #import "SHUIKit.h"
 
-@implementation UINavigationBar (SHBackgroundImage)
+@implementation UINavigationBar (BackgroundImage)
 
 - (void)shInsertSubview:(UIView *)view atIndex:(NSInteger)index {
     [self shInsertSubview:view atIndex:index];

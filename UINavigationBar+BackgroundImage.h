@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UINavigationBar (SHBackgroundImage)
+@interface UINavigationBar (BackgroundImage)
 
 - (void)shInsertSubview:(UIView *)view atIndex:(NSInteger)index;
 - (void)shSendSubviewToBack:(UIView *)view;

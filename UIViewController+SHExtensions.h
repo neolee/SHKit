@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UIViewController (SHKit)
+@interface UIViewController (SHExtensions)
 
 - (CGRect) viewFrame;
 @end
