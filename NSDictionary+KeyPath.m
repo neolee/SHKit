@@ -1,9 +1,9 @@
 //
 //  NSDictionary+KeyPath.m
-//  YACYAMLTest
+//  SHKit
 //
 //  Created by Neo on 1/2/13.
-//  Copyright (c) 2013 Paradigm-X. All rights reserved.
+//  Copyright (c) 2013 Paradigm X. All rights reserved.
 //
 
 #import "NSDictionary+KeyPath.h"

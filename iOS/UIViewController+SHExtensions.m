@@ -1,12 +1,12 @@
 //
-//  UIViewController+SHKit.m
-//  ImageTest
+//  UIViewController+SHExtensions.m
+//  SHKit
 //
-//  Created by Lee Neo on 3/30/12.
-//  Copyright (c) 2012 Home. All rights reserved.
+//  Created by Neo on 3/30/12.
+//  Copyright (c) 2012 Paradigm X. All rights reserved.
 //
 
-#import "UIViewController+SHKit.h"
+#import "UIViewController+SHExtensions.h"
 
 @implementation UIViewController (SHExtensions)
 

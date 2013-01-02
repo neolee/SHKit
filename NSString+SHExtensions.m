@@ -1,9 +1,9 @@
 //
 //  NSString+SHExtensions.m
-//  YACYAMLTest
+//  SHKit
 //
 //  Created by Neo on 1/2/13.
-//  Copyright (c) 2013 Paradigm-X. All rights reserved.
+//  Copyright (c) 2013 Paradigm X. All rights reserved.
 //
 
 #import "NSString+SHExtensions.h"

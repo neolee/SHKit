@@ -1,9 +1,9 @@
 //
 //  SHTabBarController.h
-//  Raised Center TabBar
+//  SHKit
 //
-//  Created by Neo Lee on 9/9/11.
-//  Copyright (c) 2011 Ragnarok Studio. All rights reserved.
+//  Created by Neo on 9/9/11.
+//  Copyright (c) 2011 Paradigm X. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
