@@ -10,14 +10,19 @@
 
 @implementation NSDictionary (KeyPath)
 
+
 - (id)objectForKeyPath:(NSString *)keyPath {
-    NSArray *components = [keyPath componentsSeparatedByString:@"."];
-    NSUInteger i, j, n = [components count], m;
+    NSArray *keyPathArray = [keyPath componentsSeparatedByString:@"."];
+    return [self objectForKeyPathArray:keyPathArray];
+}
+
+- (id)objectForKeyPathArray:(NSArray *)keyPathArray {
+    NSUInteger i, j, n = [keyPathArray count], m;
     
     id currentContainer = self;
     
     for (i = 0; i < n; i++) {
-        NSString *currentPathItem = [components objectAtIndex:i];
+        NSString *currentPathItem = [keyPathArray objectAtIndex:i];
         NSArray *indices = [currentPathItem componentsSeparatedByString:@"["];
         m = [indices count];
         
@@ -53,8 +58,12 @@
 @implementation NSMutableDictionary (KeyPath)
 
 - (void)setObject:(id)value forKeyPath:(NSString *)keyPath {
-    NSArray *components = [keyPath componentsSeparatedByString:@"."];
-    NSUInteger i, j, n = [components count], m;
+    NSArray *keyPathArray = [keyPath componentsSeparatedByString:@"."];
+    [self setObject:value forKeyPathArrar:keyPathArray];
+}
+
+- (void)setObject:(id)value forKeyPathArrar:(NSArray *)keyPathArray {
+    NSUInteger i, j, n = [keyPathArray count], m;
     
     id containerContainer = nil;
     id currentContainer = self;
@@ -65,7 +74,7 @@
     BOOL needArray = NO;
     
     for (i = 0; i < n; i++) {
-        currentPathItem = [components objectAtIndex:i];
+        currentPathItem = [keyPathArray objectAtIndex:i];
         indices = [currentPathItem componentsSeparatedByString:@"["];
         m = [indices count];
         
@@ -85,7 +94,7 @@
             
             needArray = NO;
             if (![containerContainer isKindOfClass:[NSDictionary class]])
-                [NSException raise:@"Path item not a dictionary" format:@"(keyPath %@ - offending %@)", keyPath, currentPathItem];
+                [NSException raise:@"Path item not a dictionary" format:@"(keyPathArray %@ - offending %@)", keyPathArray, currentPathItem];
             
             if (currentContainer == nil) {
                 currentContainer = [NSMutableDictionary dictionary];
@@ -107,7 +116,7 @@
             }
             
             if (![currentContainer isKindOfClass:[NSArray class]])
-                [NSException raise:@"Path item not an array" format:@"(keyPath %@ - offending %@)", keyPath, currentPathItem];
+                [NSException raise:@"Path item not an array" format:@"(keyPathArray %@ - offending %@)", keyPathArray, currentPathItem];
             
             for (j = 1; j < m-1; j++) {
                 index = [[indices objectAtIndex:j] intValue];
@@ -119,7 +128,7 @@
                     [containerContainer replaceObjectAtIndex:index withObject:currentContainer];
                 }
                 else if (![currentContainer isKindOfClass:[NSArray class]])
-                    [NSException raise:@"Path item not an array" format:@"(keyPath %@ - offending %@ index %ld)", keyPath, currentPathItem, j-1];
+                    [NSException raise:@"Path item not an array" format:@"(keyPathArray %@ - offending %@ index %ld)", keyPathArray, currentPathItem, j-1];
             }
             
             index = [[indices objectAtIndex:m-1] intValue];
@@ -139,12 +148,12 @@
     
     if (needArray) { // containerContainer must be an array
         if (![containerContainer isKindOfClass:[NSArray class]])
-            [NSException raise:@"Last path item is not an array" format:@"(keyPath %@)", keyPath];
+            [NSException raise:@"Last path item is not an array" format:@"(keyPathArray %@)", keyPathArray];
         [containerContainer replaceObjectAtIndex:index withObject:value];
     }
     else {
         if (![containerContainer isKindOfClass:[NSDictionary class]])
-            [NSException raise:@"Before-last path item is not a dictionary" format:@"(keyPath %@)", keyPath];
+            [NSException raise:@"Before-last path item is not a dictionary" format:@"(keyPathArray %@)", keyPathArray];
         
         [containerContainer setObject:value forKey:currentPathItem];
     }

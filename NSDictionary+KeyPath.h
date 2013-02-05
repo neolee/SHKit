@@ -27,10 +27,12 @@
 
 @interface NSDictionary (KeyPath)
 
+- (id)objectForKeyPathArray:(NSArray *)keyPathArray;
 - (id)objectForKeyPath:(NSString *)keyPath;
 @end
 
 @interface NSMutableDictionary (KeyPath)
 
+- (void)setObject:(id)value forKeyPathArrar:(NSArray *)keyPathArray;
 - (void)setObject:(id)value forKeyPath:(NSString *)keyPath;
 @end
