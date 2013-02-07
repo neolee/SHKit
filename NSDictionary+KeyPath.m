@@ -59,10 +59,10 @@
 
 - (void)setObject:(id)value forKeyPath:(NSString *)keyPath {
     NSArray *keyPathArray = [keyPath componentsSeparatedByString:@"."];
-    [self setObject:value forKeyPathArrar:keyPathArray];
+    [self setObject:value forKeyPathArray:keyPathArray];
 }
 
-- (void)setObject:(id)value forKeyPathArrar:(NSArray *)keyPathArray {
+- (void)setObject:(id)value forKeyPathArray:(NSArray *)keyPathArray {
     NSUInteger i, j, n = [keyPathArray count], m;
     
     id containerContainer = nil;

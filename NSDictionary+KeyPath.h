@@ -33,6 +33,6 @@
 
 @interface NSMutableDictionary (KeyPath)
 
-- (void)setObject:(id)value forKeyPathArrar:(NSArray *)keyPathArray;
+- (void)setObject:(id)value forKeyPathArray:(NSArray *)keyPathArray;
 - (void)setObject:(id)value forKeyPath:(NSString *)keyPath;
 @end
