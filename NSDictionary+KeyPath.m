@@ -128,7 +128,7 @@
                     [containerContainer replaceObjectAtIndex:index withObject:currentContainer];
                 }
                 else if (![currentContainer isKindOfClass:[NSArray class]])
-                    [NSException raise:@"Path item not an array" format:@"(keyPathArray %@ - offending %@ index %ld)", keyPathArray, currentPathItem, j-1];
+                    [NSException raise:@"Path item not an array" format:@"(keyPathArray %@ - offending %@ index %d)", keyPathArray, currentPathItem, j-1];
             }
             
             index = [[indices objectAtIndex:m-1] intValue];

@@ -14,7 +14,7 @@
 - (UIViewController *)viewControllerWithTabTitle:(NSString*)title image:(UIImage*)image;
 
 // Bind a pre-created view controller to a newly created TabBarItem
-- (UIViewController *)bindTabBarItemToViewController:(UIViewController *)viewController:(NSString*)title image:(UIImage*)image;
+- (UIViewController *)bindTabBarItemToViewController:(UIViewController *)viewController title:(NSString*)title image:(UIImage*)image;
 
 // Create a custom UIButton and add it to the center of the tab bar
 - (void)addCenterButtonWithImage:(UIImage*)buttonImage highlightImage:(UIImage*)highlightImage;

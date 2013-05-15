@@ -18,7 +18,7 @@
     return viewController;
 }
 
-- (UIViewController *)bindTabBarItemToViewController:(UIViewController *)viewController:(NSString*)title image:(UIImage*)image {
+- (UIViewController *)bindTabBarItemToViewController:(UIViewController *)viewController title:(NSString*)title image:(UIImage*)image {
     viewController.tabBarItem = [[UITabBarItem alloc] initWithTitle:title image:image tag:0];
     return viewController;
 }
