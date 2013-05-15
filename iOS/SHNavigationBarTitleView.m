@@ -26,16 +26,20 @@
 }
 
 - (id)init {
-    self = [super initWithFrame:CGRectMake(0, 0, 200, 44)];
+    // We use sizes for landscape display as default, saving dynamic adjusting.
+    // And it looks better on portrait mode as well.
+    // Vertical sizes for portrait display: 44, 24, 44-24; font sizes: 20, 13.
+    // Vertical sizes for landscape display: 32, 16, 32-16; font sizes: 16, 12.
+    self = [super initWithFrame:CGRectMake(0, 0, 200, 32)];
     
     if (self) {
         [self setBackgroundColor: [UIColor clearColor]];
         [self setAutoresizesSubviews:YES];
         
-        CGRect titleFrame = CGRectMake(0, 2, 200, 24);
+        CGRect titleFrame = CGRectMake(0, 2, 200, 16);
         _titleLabel = [[UILabel alloc] initWithFrame:titleFrame];
         [_titleLabel setBackgroundColor:[UIColor clearColor]];
-        [_titleLabel setFont:[UIFont boldSystemFontOfSize:20]];
+        [_titleLabel setFont:[UIFont boldSystemFontOfSize:16]];
         [_titleLabel setTextAlignment:NSTextAlignmentCenter];
         [_titleLabel setTextColor:[UIColor whiteColor]];
         [_titleLabel setShadowColor:[UIColor darkGrayColor]];
@@ -44,10 +48,10 @@
         [_titleLabel setAdjustsFontSizeToFitWidth:YES];
         [self addSubview:_titleLabel];
         
-        CGRect detailFrame = CGRectMake(0, 24, 200, 44-24);
+        CGRect detailFrame = CGRectMake(0, 16, 200, 32-16);
         _detailLabel = [[UILabel alloc] initWithFrame:detailFrame];
         [_detailLabel setBackgroundColor:[UIColor clearColor]];
-        [_detailLabel setFont:[UIFont systemFontOfSize:13]];
+        [_detailLabel setFont:[UIFont systemFontOfSize:12]];
         [_detailLabel setTextAlignment:NSTextAlignmentCenter];
         [_detailLabel setTextColor:[UIColor whiteColor]];
         [_detailLabel setShadowColor:[UIColor darkGrayColor]];
