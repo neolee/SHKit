@@ -38,24 +38,16 @@
         
         CGRect titleFrame = CGRectMake(0, 2, 200, 16);
         _titleLabel = [[UILabel alloc] initWithFrame:titleFrame];
-        [_titleLabel setBackgroundColor:[UIColor clearColor]];
         [_titleLabel setFont:[UIFont boldSystemFontOfSize:16]];
         [_titleLabel setTextAlignment:NSTextAlignmentCenter];
-        [_titleLabel setTextColor:[UIColor whiteColor]];
-        [_titleLabel setShadowColor:[UIColor darkGrayColor]];
-        [_titleLabel setShadowOffset:CGSizeMake(0, -1)];
         [_titleLabel setText:@""];
         [_titleLabel setAdjustsFontSizeToFitWidth:YES];
         [self addSubview:_titleLabel];
         
         CGRect detailFrame = CGRectMake(0, 16, 200, 32-16);
         _detailLabel = [[UILabel alloc] initWithFrame:detailFrame];
-        [_detailLabel setBackgroundColor:[UIColor clearColor]];
         [_detailLabel setFont:[UIFont systemFontOfSize:12]];
         [_detailLabel setTextAlignment:NSTextAlignmentCenter];
-        [_detailLabel setTextColor:[UIColor whiteColor]];
-        [_detailLabel setShadowColor:[UIColor darkGrayColor]];
-        [_detailLabel setShadowOffset:CGSizeMake(0, -1)];
         [_detailLabel setText:@""];
         [_detailLabel setAdjustsFontSizeToFitWidth:YES];
         [self addSubview:_detailLabel];
